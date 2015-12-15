@@ -65,9 +65,20 @@ var Cmd = &cobra.Command{
 	},
 }
 
+var InspectCmd = &cobra.Command{
+	Use: "registry inspect image",
+	Short: "",
+	Long: "",
+	Run: func (cmd *cobra.Command, args []string) {
+		log.Fatal("not yet implemented")
+	}
+}
+
 var showVersion bool
 
 func init() {
+	Cmd.AddCommand(InspectCmd)
+	// TODO(runcom): add -f --format flag to inspect
 	Cmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "show the version and exit")
 }
 
